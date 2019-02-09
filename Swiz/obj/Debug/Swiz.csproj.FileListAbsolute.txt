@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\bin\Debug\Swiz.exe.config
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\bin\Debug\Swiz.exe
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\bin\Debug\Swiz.pdb
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\obj\Debug\Swiz.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\obj\Debug\Swiz.exe
+C:\Users\Administrator\Desktop\SWIZ\Swiz\Swiz\obj\Debug\Swiz.pdb
