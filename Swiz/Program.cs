@@ -31,16 +31,45 @@ namespace Swiz
             if (!string.IsNullOrEmpty(operation))
             {
                 operation = operation.Replace(@"\/", "$$<slash>##");
-                string[] operators = line.Split('/');
+                string[] operators = operation.Split('/');
                 
-                if(operators != null && operators.Length != 3)
+                if(operators != null && operators.Length < 3)
                 {
                     Console.Error.WriteLine("Invalid operation pattern");
                     throw new Exception("Invalid Operation");
                 }
+                String oper = operators[0].Trim().ToLower();
+                String pattern = operators[1].Trim().Replace("$$<slash>##", @"/");
+                String trasformation = operators[2].Trim().Replace("$$<slash>##", @"/");
+                String mode = operators.Length>3 ? operators[3].Trim() : string.Empty;
+
+                switch (oper)
+                {
+                    case "s":
+                        line = substitution(line, pattern, trasformation, mode);
+                        break;
+                    default:
+                        break; 
+                }
+
 
             }
             return line;
+        }
+
+        private static string substitution(string line,string pattern, string trasformation, string mode)
+        {
+            Regex rgx = new Regex(pattern);
+            switch (mode)
+            {
+                case "g":
+                    return rgx.Replace(line, trasformation);
+                    
+                default:
+                    return rgx.Replace(line, trasformation, 1);
+
+            }
+            
         }
     }
 }
